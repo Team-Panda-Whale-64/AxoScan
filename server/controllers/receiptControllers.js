@@ -11,7 +11,7 @@ const receiptController = {
       form.append('incognito', 'false');
       form.append('extractTime', 'false');
       form.append('extractLineItems', 'true');
-      form.append('file', req.file.buffer, req.file.originalname);
+      form.append(`file`, req.file.buffer, req.file.originalname);
 
       const options = {
         method: 'POST',
