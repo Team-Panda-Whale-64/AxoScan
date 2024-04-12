@@ -5,12 +5,12 @@ import '../styles/Home.css';
 import './totalSum.css';
 import Footer from '../components/Footer.jsx';
 import Category from './Category.jsx';
-import { navigation } from 'react-router-dom';
+import useNavigate from 'react-router-dom';
 
 const TotalSum = () => {
 	const [total, setTotal] = useState(null);
 	const [categoryTotals, setCategoryTotals] = useState([]);
-	const history = navigation();
+	const history = useNavigate();
 
 	const categoryArray = [];
 
