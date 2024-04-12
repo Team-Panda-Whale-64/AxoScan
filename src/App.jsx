@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from './components/Home.jsx';
-import totalSum from './totalSum/totalSum.jsx'
-import { BrowserRouter, Route, Router, Link } from 'react-router-dom'
+import TotalSum from './totalSum/TotalSum.jsx'
+import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import './App.css';
 
 function App() {
@@ -10,10 +10,11 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      <Route>
-      <Router path='/' element={<Home />}/>
-      <Router path='/totalSum' element={totalSum}/>
-      </Route>
+      <Routes>
+      <Route path='/' element={<Home />}/>
+      <Route path='/totalSum' element={<TotalSum/>}/>
+      {/* <Route path='/login' element={<Login />}/> */}
+      </Routes>
     </BrowserRouter>
     </>
   );
