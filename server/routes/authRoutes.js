@@ -17,8 +17,12 @@ router.use(
   })
 );
 
-// post request
-router.post('/upload', upload.single('file'), memorize, receiptController.uploadReceipt, searchArray.searched, receiptController.saveReceipt, (req, res) => res.status(200).json(res.locals.array));
+router.get('/totalSum', receiptController.totalSum, (req, res) => {
+  res.status(200).json(res.locals.totalSum);
+})
 
+// post request
+router.post('/upload', memorize, upload.single('file'), receiptController.uploadReceipt, searchArray.searched, receiptController.saveReceipt, (req, res) => res.status(200).json(res.locals.array));
+//  took out since this is likely to err 
 // eslint-disable-next-line no-undef
 export default router;

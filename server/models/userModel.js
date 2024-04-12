@@ -11,14 +11,16 @@ mongoose.connect(process.env.MONGO_URI, {
     .then(() => console.log('Connected to Mongo DB.'))
     .catch(err => console.log(err));
 
-const Schema = mongoose.Schema;
+    const Schema = mongoose.Schema
 
-const receiptSchema = new Schema({
-
-  fileName: {type: String, require: true},
-  receipt: {type: Array, require: true},
-});
-
-const Receipt = mongoose.model('receipt', receiptSchema);
-
-export default Receipt
+const userSchema = new Schema({
+    username: {type: String, require: true},
+    password: {type: String, require: true},
+    receipts: {type: Array, require: true},
+    cataegoryTotal: {type: Object, require: true}
+  })
+  
+  const User = mongoose.model('user', userSchema);
+  
+  
+  export default User;
