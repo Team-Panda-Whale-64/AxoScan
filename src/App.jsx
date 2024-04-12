@@ -1,8 +1,8 @@
 import React from 'react';
 import Home from './components/Home.jsx';
-import TotalSum from './totalSum/TotalSum.jsx'
-import { BrowserRouter, Route, Routes} from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Router, Link } from 'react-router-dom'
 import './App.css';
+//import login
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -10,6 +10,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
+      <Routes>
       <Routes>
       <Route path='/' element={<Home />}/>
       <Route path='/totalSum' element={<TotalSum/>}/>
